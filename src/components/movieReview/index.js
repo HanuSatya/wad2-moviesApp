@@ -8,4 +8,4 @@ const MovieReview =  ({ review }) => {
     </>
   );
 };
-export default MovieReview;
+export default MovieReview
