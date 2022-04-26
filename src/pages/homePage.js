@@ -8,6 +8,7 @@ import MovieFilterUI, {
   titleFilter,
   genreFilter,
 } from "../components/movieFilterUI";
+import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
 const titleFiltering = {
   name: "title",
@@ -46,16 +47,18 @@ const HomePage = (props) => {
   const displayedMovies = filterFunction(movies);
 
   // Redundant, but necessary to avoid app crashing.
-  const favourites = movies.filter((m) => m.favorite);
-  localStorage.setItem("favourites", JSON.stringify(favourites));
-  const addToFavourites = (movieId) => true;
+  // const favourites = movies.filter((m) => m.favorite);
+  // localStorage.setItem("favourites", JSON.stringify(favourites));
+  // const addToFavourites = (movieId) => true;
 
   return (
     <>
       <PageTemplate
         title="Discover Movies"
         movies={displayedMovies}
-        selectFavourite={addToFavourites}
+        action={(movie) => {
+          return <AddToFavouritesIcon movie={movie} />
+        }}
       />
       <MovieFilterUI
         filterInputChange={changeFilterValues}
