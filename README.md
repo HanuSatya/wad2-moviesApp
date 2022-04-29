@@ -74,7 +74,7 @@ We can write our own review for our favourite movies.
 ![image](![Write A Review](https://user-images.githubusercontent.com/91950953/165971470-ca56cc4b-3c44-4b67-ab5c-02dc190add09.PNG))
 
 __Filter Function__
-The Filter function to select the Gener.
+The Filter function to select the Genre.
 ![image](![Filter](https://user-images.githubusercontent.com/91950953/165972279-ac130423-6c24-40ea-ac4d-d2ddc3ca0822.PNG))
 
 
