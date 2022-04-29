@@ -2,11 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
+import TemplateMovieActorsPage from "../components/templateMoiveActorsPage";
 //import useMovie from "../hooks/useMovie";
 import { getMovie } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
-import MovieRecom from "../components/moiveRecommendation";
+import MovieRecom from "../components/templateMoiveRecommendations";
 
 const MovieDetailsPage = (props) => {
   const { id } = useParams();
@@ -30,8 +31,11 @@ const MovieDetailsPage = (props) => {
       {movie ? (
         <>
           <PageTemplate movie={movie}>
-            <MovieDetails movie={movie} />
-          </PageTemplate>
+          <MovieDetails movie={movie}>    
+            </MovieDetails>
+          </PageTemplate> 
+          <TemplateMovieActorsPage movie={movie}>
+          </TemplateMovieActorsPage>
           <MovieRecom movie={movie}>
           </MovieRecom>
         </>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from '../movieReviews'
+import MovieReviews from '../movieReviews';
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -66,6 +66,18 @@ const MovieDetails = ( {movie}) => {
           </li>
         ))}
       </Paper>
+      
+      <Paper component="ul" className={classes.chipSet}>
+        <li>
+          <Chip label="Spoken languages" className={classes.chipLabel} color="primary" />
+        </li>
+        {movie.spoken_languages.map((c) => (
+          <li key={c.name}>
+            <Chip label={c.name} className={classes.chip} />
+          </li>
+        ))}
+      </Paper>
+
       <Paper component="ul" className={classes.chipSet}>
         <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
         <Chip
