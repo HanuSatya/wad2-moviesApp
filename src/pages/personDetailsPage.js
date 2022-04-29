@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import Spinner from '../components/spinner';
 import { getPerson } from "../api/tmdb-api";
 import PersonMoviespage from "../components/templatePersonMoviesPage";
+
 //import TemplateMovieRecom from "../components/templateMoiveRecommendations"
 //moive info page
 
