@@ -11,6 +11,8 @@ __Name:__ Hanuma Satya Sunnam
 # Actors in Moivie: Actors who acted in the movie are listed below the Movie page from the actors endpoint of TMDB
 # Favourites: In this favourites page we can find the Writing Review Icon and Deleting option as well as In the movie section we can see the Actors who played the chracters and recommended movies of the same type
 
+
+
 ## Feature Design.
 
 __The TopRated Movies feature.__
@@ -45,6 +47,7 @@ __URL:__ /movies/favourites
 ![image](![Favourites](https://user-images.githubusercontent.com/91950953/165968929-f651b409-3629-4f58-9405-84a511a2d7cc.PNG))
 
 
+
 __Recommended Movies__
 The details of the Recommed Movies can be found at the bottom fo the Movie More-Info page.
 ![image](![Recommended movies](https://user-images.githubusercontent.com/91950953/165969255-b4b87ab5-1ca3-4636-9975-bf44a31915d5.PNG))
@@ -66,11 +69,9 @@ The review about the movie which are written by Authors and Critics.
 ![image](![Reviews](https://user-images.githubusercontent.com/91950953/165971709-5bae3cc0-eb97-42d0-86f3-8aa46add102e.PNG))
 ![image](![Full_Review](https://user-images.githubusercontent.com/91950953/165973594-1a83e1e5-c47b-486a-b812-1df79120f5ed.PNG))
 
-
 __Write A Review__
 We can write our own review for our favourite movies.
 ![image](![Write A Review](https://user-images.githubusercontent.com/91950953/165971470-ca56cc4b-3c44-4b67-ab5c-02dc190add09.PNG))
-
 
 __Filter Function__
 The Filter function to select the Gener.
