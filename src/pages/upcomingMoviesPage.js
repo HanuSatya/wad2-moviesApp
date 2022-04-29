@@ -44,7 +44,7 @@ const UpcomingMoviesPage = (props) => {
   };
 
   const movies = data ? data.results : [];
-  console.log(movies)
+  //console.log(movies)
   const displayedMovies = filterFunction(movies);
 
   return (

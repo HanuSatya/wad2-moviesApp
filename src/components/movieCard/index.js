@@ -15,6 +15,7 @@ import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import { MoviesContext } from "../../contexts/moviesContext";
 
+
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
   media: { height: 500 },
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
 
 export default function MovieCard({ movie, action }) {
   const classes = useStyles();
-  const { favourites } = useContext(MoviesContext);
+  const { favourites} = useContext(MoviesContext);
 
   if (favourites.find((id) => id === movie.id)) {
     movie.favourite = true;
@@ -33,7 +34,7 @@ export default function MovieCard({ movie, action }) {
     movie.favourite = false
   }
 
-
+  
   return (
     <Card className={classes.card}>
       <CardHeader
