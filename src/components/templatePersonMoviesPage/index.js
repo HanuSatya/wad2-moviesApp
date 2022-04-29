@@ -4,10 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import { getMovieRecommendations } from "../../api/tmdb-api";
+import { getPersonMovie } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
 import Link from "react-scroll/modules/components/Link";
+
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -37,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const MovieRecom = ({ movie, children }) => {
+const PersonMoviespage = ({ person, children }) => {
     const classes = useStyles();
     const { data , error, isLoading, isError } = useQuery(
-      ["recommendations", { id: movie.id }],
-      getMovieRecommendations
+      ["movie_credits", { person_id: person.id }],
+      getPersonMovie
     );
   
     if (isLoading) {
@@ -51,17 +52,17 @@ const MovieRecom = ({ movie, children }) => {
     if (isError) {
       return <h1>{error.message}</h1>;
     }
-    const recommendations = data.results
+    const movie_credits = data.cast
   
   
     return (
       <div className={classes.root}>
   
-        <Grid movie={movie} container spacing={10} style={{ padding: "15px" }}>
+        <Grid person={person} container spacing={10} style={{ padding: "15px" }}>
           <Grid item xs={10}>
             <div className={classes.gridListRoot}>
               <GridList cellHeight={500} className={classes.gridList} cols={7} >
-                {recommendations.map((image) => (
+                {movie_credits.map((image) => (
                    <div> <GridListTile key={image.poster_path} className={classes.gridListTile} cols={3}>
                       <img
                       src={`https://image.tmdb.org/t/p/w300/${image.poster_path}`}
@@ -83,5 +84,4 @@ const MovieRecom = ({ movie, children }) => {
     );
   };
   
-  export default MovieRecom;
-  
+  export default PersonMoviespage;

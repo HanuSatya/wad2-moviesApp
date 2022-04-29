@@ -2,12 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
-import TemplateMovieActorsPage from "../components/templateMoiveActorsPage";
+import TemplateMovieActorsPage from "../components/templateMovieActorsPage";
 //import useMovie from "../hooks/useMovie";
 import { getMovie } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
-import MovieRecom from "../components/templateMoiveRecommendations";
+import MovieRecom from "../components/templateMovieRecommendations";
+
 
 const MovieDetailsPage = (props) => {
   const { id } = useParams();
