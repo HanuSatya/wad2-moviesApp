@@ -6,6 +6,7 @@ import PageTemplate from "../components/templateMoviePage";
 import { getMovie } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
+import MovieRecom from "../components/moiveRecommendation";
 
 const MovieDetailsPage = (props) => {
   const { id } = useParams();
@@ -31,6 +32,8 @@ const MovieDetailsPage = (props) => {
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
           </PageTemplate>
+          <MovieRecom movie={movie}>
+          </MovieRecom>
         </>
       ) : (
         <p>Waiting for movie details</p>
