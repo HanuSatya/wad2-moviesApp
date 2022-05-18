@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,6 +12,7 @@ import Menu from "@material-ui/core/Menu";
 import { useHistory } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import {AuthContext }from "../../contexts/authContext";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SiteHeader = () => {
   const classes = useStyles();
+  const authcontext = useContext(AuthContext);
   const  history = useHistory()
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
@@ -36,9 +38,37 @@ const SiteHeader = () => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favourites" },
     { label: "Top Rated Moives", path: "/movies/toprated" },
-    { label: "Region", path: "" },    
-    
+    { label: "Region", path: "" },        
   ];
+
+  const logoutprint = () => {
+    if(authcontext != null)
+    {
+      if(authcontext.isAuthenticated)
+      {
+        return  <Button key={"logout"} color="inherit" onClick={() => logout()}>{"logout"}</Button>
+      }
+    }
+  }
+  const loginprint = () => {
+    if(authcontext != null)
+    {
+      if(!authcontext.isAuthenticated)
+      {
+        return  <Button key={"login"} color="inherit" onClick={() => login()}>{"login"}</Button>
+      }
+    }
+  }
+
+  const logout= (e) =>{
+    localStorage.clear(); 
+    if(authcontext != null){
+    authcontext.signout();
+    }
+  }
+  const login= (e) =>{
+    history.push('/login');
+  }
 
   const handleMenuSelect = (pageURL) => {
     history.push(pageURL);
@@ -105,7 +135,10 @@ const SiteHeader = () => {
                 >
                   {opt.label}
                 </Button>
+
               ))}
+              {loginprint()}
+              {logoutprint()}
             </>
           )}
         </Toolbar>

@@ -13,6 +13,11 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import Topratedpage from './pages/topratedMoivesPage';
 import PersonDetailsPage from './pages/personDetailsPage';
+import AuthContextProvider from "./contexts/authContext";
+import LoginPage from "./pages/loginPage";
+import SignUpPage from "./pages/signUpPage"
+// import PrivateRoute from "./privateRoute";
+import AuthHeader from "./components/authHeader/authHeader";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,9 +33,30 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+      <AuthContextProvider>
+      {/* <AuthHeader /> */}
         <SiteHeader />
         <MoviesContextProvider>
+        {/* <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/public">Public</Link>
+            </li>
+            <li>
+              <Link to="/movies">Movies</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          </ul> */}
       <Switch>
+      <Route path="/login" component={LoginPage} />
+        <Route path="/signup" component={SignUpPage} />
+        {/* <Route path="/public" component={PublicPage} /> */}
+        {/* <PrivateRoute path="/movies" component={Movies} />
+        <PrivateRoute path="/profile" component={Profile} /> */}
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
         <Route path="/reviews/:id" component={MovieReviewPage} />
         <Route exact path="/movies/favourites" component={FavouriteMoviesPage} />
@@ -42,6 +68,7 @@ const App = () => {
         <Redirect from="*" to="/" />
       </Switch>
       </MoviesContextProvider>
+      </AuthContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
