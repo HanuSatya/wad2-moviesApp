@@ -17,3 +17,14 @@ export const login = (email, password) => {
         body: JSON.stringify({ email: email, password: password })
     }).then(res => res.json());
 };
+
+export const getMovies = async () => {
+    const res = await fetch(
+        '/api/movies', {
+            headers: {
+                'Authorization': window.localStorage.getItem('token')
+            }
+    }
+    )
+    return res.json();
+};

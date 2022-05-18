@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, createContext, useEffect, useReducer } from "react";
+import { getMovies } from "../api/movie-api";
 
-export const MoviesContext = React.createContext(null);
+export const MoviesContext = createContext(null);
+
 
 const MoviesContextProvider = (props) => {
 const [favourites, setFavourites] = useState([]);
 const [myReviews, setMyReviews] = useState([]);
+const [movies,setMovies] = useState(null);
+const [authenticated, setAuthenticated] = useState(false);
+
 
   const addToFavourites = (movie) => {
     let updatedFavourites = [...favourites];
@@ -23,6 +28,14 @@ const [myReviews, setMyReviews] = useState([]);
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
 
+  useEffect(() => {
+    if(authenticated){
+       getMovies().then(result => {
+         console.log(result);
+         setMovies(result);
+       });}
+     },[authenticated]);
+
   return (
     <MoviesContext.Provider
       value={{
@@ -30,6 +43,8 @@ const [myReviews, setMyReviews] = useState([]);
         addToFavourites,
         removeFromFavourites,
         addReview,
+        movies,
+        setAuthenticated
       }}
     >
       {props.children}

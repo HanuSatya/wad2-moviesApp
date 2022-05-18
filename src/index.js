@@ -17,7 +17,9 @@ import AuthContextProvider from "./contexts/authContext";
 import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/signUpPage"
 // import PrivateRoute from "./privateRoute";
-import AuthHeader from "./components/authHeader/authHeader";
+// import AuthHeader from "./components/authHeader/authHeader";
+import MovieProvider from "./contexts/moviesContext";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -51,6 +53,7 @@ const App = () => {
               <Link to="/profile">Profile</Link>
             </li>
           </ul> */}
+          <MovieProvider>
       <Switch>
       <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPage} />
@@ -67,6 +70,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>
+      </MovieProvider>
       </MoviesContextProvider>
       </AuthContextProvider>
       </BrowserRouter>

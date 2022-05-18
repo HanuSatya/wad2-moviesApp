@@ -1,4 +1,6 @@
 import React from "react";
+// import { useContext} from 'react';
+// import { MoviesContext } from '.././contexts/moviesContext';
 import { useParams } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
@@ -26,6 +28,7 @@ const MovieDetailsPage = (props) => {
     return <h1>{error.message}</h1>;
   }
 
+  
 
   return (
     <>
