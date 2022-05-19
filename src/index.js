@@ -18,7 +18,7 @@ import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/signUpPage";
 import TvPage from "./pages/tv";
 import TvDetailsPage from "./pages/tvDetails";
-// import PrivateRoute from "./privateRoute";
+import PrivateRoute from "./routes/privateRoute";
 // import AuthHeader from "./components/authHeader/authHeader";
 import MovieProvider from "./contexts/moviesContext";
 
@@ -37,6 +37,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+
       <AuthContextProvider>
       {/* <AuthHeader /> */}
         <SiteHeader />
@@ -66,11 +67,11 @@ const App = () => {
         <PrivateRoute path="/profile" component={Profile} /> */}
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
         <Route path="/reviews/:id" component={MovieReviewPage} />
-        <Route exact path="/movies/favourites" component={FavouriteMoviesPage} />
-        <Route path="/movies/upcoming" component={UpcomingMoviesPage} />
+        <PrivateRoute exact path="/movies/favourites" component={FavouriteMoviesPage} />
+        <PrivateRoute path="/movies/upcoming" component={UpcomingMoviesPage} />
         <Route exact path="/movies/toprated" component={Topratedpage} />
         <Route path="/person/:person_id" component={PersonDetailsPage} />
-        <Route path="/movies/:id" component={MoviePage} />
+        <PrivateRoute path="/movies/:id" component={MoviePage} />
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState}  from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import { getUpcomingMovies } from "../api/tmdb-api";
+import { getUpcomingMovies } from "../api/movie-api";
 import useFiltering from "../hooks/useFiltering";
 import MovieFilterUI, {
   titleFilter,
@@ -22,7 +22,8 @@ const genreFiltering = {
 };
 
 const UpcomingMoviesPage = (props) => {
-  const { data, error, isLoading, isError } = useQuery("upcoming", getUpcomingMovies);
+  const [pageNo, setPageNo] = useState(1);
+  const { data, error, isLoading, isError } = useQuery(["upcoming",[pageNo]],() =>  getUpcomingMovies(pageNo));
   const { filterValues, setFilterValues, filterFunction } = useFiltering(
     [],
     [titleFiltering, genreFiltering]
@@ -61,6 +62,13 @@ const UpcomingMoviesPage = (props) => {
         titleFilter={filterValues[0].value}
         genreFilter={filterValues[1].value}
       />
+      <button onClick={()=> {
+        setPageNo(pageNo-1)
+      }}>PREV</button>
+      <label>{pageNo}</label>
+      <button onClick={()=>{
+        setPageNo(pageNo+1);
+      }}>NEXT</button>
     </>
   );
 };
