@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 const MovieHeader = ({ movie }) => {
   const classes = useStyles();
   const history = useHistory();
+  const title=movie.title?movie.title:movie.original_name
 
   return (
     <Paper component="div" className={classes.root}>
@@ -31,7 +32,7 @@ const MovieHeader = ({ movie }) => {
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
       <Typography variant="h4" component="h3">
-        {movie.title}
+        {title}
         <a href={movie.homepage}>
           <HomeIcon color="primary" />
         </a>

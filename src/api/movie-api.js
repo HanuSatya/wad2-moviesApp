@@ -18,13 +18,14 @@ export const login = (email, password) => {
     }).then(res => res.json());
 };
 
-export const getMovies = async () => {
-    const res = await fetch(
-        '/api/movies', {
-            headers: {
-                'Authorization': window.localStorage.getItem('token')
-            }
+export const getMovies = () => {
+    return fetch(
+       '/api/movies',{headers: {
+         'Authorization': window.localStorage.getItem('token')
+      }
     }
     )
-    return res.json();
-};
+      .then(res => res.json())
+      .then(json => {return json.results;});
+  };
+  

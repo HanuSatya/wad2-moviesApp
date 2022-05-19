@@ -15,7 +15,9 @@ import Topratedpage from './pages/topratedMoivesPage';
 import PersonDetailsPage from './pages/personDetailsPage';
 import AuthContextProvider from "./contexts/authContext";
 import LoginPage from "./pages/loginPage";
-import SignUpPage from "./pages/signUpPage"
+import SignUpPage from "./pages/signUpPage";
+import TvPage from "./pages/tv";
+import TvDetailsPage from "./pages/tvDetails";
 // import PrivateRoute from "./privateRoute";
 // import AuthHeader from "./components/authHeader/authHeader";
 import MovieProvider from "./contexts/moviesContext";
@@ -57,6 +59,8 @@ const App = () => {
       <Switch>
       <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPage} />
+        <Route path="/tv/:id" component={TvDetailsPage} />
+        <Route path="/tv" component={TvPage} />
         {/* <Route path="/public" component={PublicPage} /> */}
         {/* <PrivateRoute path="/movies" component={Movies} />
         <PrivateRoute path="/profile" component={Profile} /> */}

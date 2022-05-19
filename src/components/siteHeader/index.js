@@ -38,7 +38,7 @@ const SiteHeader = () => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favourites" },
     { label: "Top Rated Moives", path: "/movies/toprated" },
-    { label: "Region", path: "" },        
+    { label: "TV", path: "/tv" },        
   ];
 
   const logoutprint = () => {
