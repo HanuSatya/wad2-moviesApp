@@ -88,9 +88,9 @@ export const getMovie = (args) => {
       });
   }; 
 
-  export const getTopratedmoives = () => {
+  export const getTopratedmoives = (pageNo) => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&include_video=false&page=${pageNo}`
     ).then((response) => {
       if (!response.ok) {
         throw new Error(response.json().message);

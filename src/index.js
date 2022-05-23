@@ -71,7 +71,7 @@ const App = () => {
         <PrivateRoute path="/movies/upcoming" component={UpcomingMoviesPage} />
         <Route exact path="/movies/toprated" component={Topratedpage} />
         <Route path="/person/:person_id" component={PersonDetailsPage} />
-        <PrivateRoute path="/movies/:id" component={MoviePage} />
+        <Route path="/movies/:id" component={MoviePage} />
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>

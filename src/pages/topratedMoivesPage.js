@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
@@ -22,7 +22,8 @@ const genreFiltering = {
 };
 
 const Topratedpage = (props) => {
-  const { data, error, isLoading, isError } = useQuery("Toprated", getTopratedmoives);
+  const [pageNo, setPageNo] = useState(1);
+  const { data, error, isLoading, isError } = useQuery(["Toprated",[pageNo]],() => getTopratedmoives(pageNo));
   const { filterValues, setFilterValues, filterFunction } = useFiltering(
     [],
     [titleFiltering, genreFiltering]
@@ -61,6 +62,13 @@ const Topratedpage = (props) => {
         titleFilter={filterValues[0].value}
         genreFilter={filterValues[1].value}
       />
+      <button onClick={()=> {
+        setPageNo(pageNo-1)
+      }}>PREV</button>
+      <label>{pageNo}</label>
+      <button onClick={()=>{
+        setPageNo(pageNo+1);
+      }}>NEXT</button>
     </>
   );
 };
