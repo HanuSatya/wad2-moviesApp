@@ -14,6 +14,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {AuthContext }from "../../contexts/authContext";
 
+
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -38,7 +39,8 @@ const SiteHeader = () => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favourites" },
     { label: "Top Rated Moives", path: "/movies/toprated" },
-    { label: "TV", path: "/tv" },        
+    { label: "TV", path: "/tv" },
+    { label: "FantasyMovie", path: "/fantasyMoviePage" },        
   ];
 
   const logoutprint = () => {
@@ -59,6 +61,15 @@ const SiteHeader = () => {
       }
     }
   }
+  // const fantasyprint = () => {
+  //   if (authcontext != null)
+  //   {
+  //     if (!authcontext.isAuthenticated)
+  //     {
+  //       return <Button key={"FantasyMovie"} color="inherit" onClick={() => FantasyMovie()}>{"FantasyMovie"}</Button>
+  //     }
+  //   }
+  // }
 
   const logout= (e) =>{
     localStorage.clear(); 
@@ -68,6 +79,9 @@ const SiteHeader = () => {
   }
   const login= (e) =>{
     history.push('/login');
+  }
+  const FantasyMovie= (e) =>{
+    history.push('/FansatyMovie');
   }
 
   const handleMenuSelect = (pageURL) => {
@@ -139,6 +153,7 @@ const SiteHeader = () => {
               ))}
               {loginprint()}
               {logoutprint()}
+              {/* {fantasyprint()} */}
             </>
           )}
         </Toolbar>

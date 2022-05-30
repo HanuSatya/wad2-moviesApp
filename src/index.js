@@ -21,6 +21,7 @@ import TvDetailsPage from "./pages/tvDetails";
 import PrivateRoute from "./routes/privateRoute";
 // import AuthHeader from "./components/authHeader/authHeader";
 import MovieProvider from "./contexts/moviesContext";
+import FantasyMoviePage from "./pages/fantasyMoviePage"
 
 
 const queryClient = new QueryClient({
@@ -72,6 +73,7 @@ const App = () => {
         <Route exact path="/movies/toprated" component={Topratedpage} />
         <Route path="/person/:person_id" component={PersonDetailsPage} />
         <Route path="/movies/:id" component={MoviePage} />
+        <Route path= "/fantasyMoviePage" component ={FantasyMoviePage}/>
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
       </Switch>

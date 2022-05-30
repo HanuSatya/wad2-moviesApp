@@ -70,3 +70,14 @@ export const getMovies = (pageNo) => {
      throw error
   });
  };
+
+
+ export const FantasyMovie = (title, overview, genres, runtime, release_date) => {
+  return fetch('/api/movies/fantasymovie', {
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify({ title: title, overview: overview, genres: genres, runtime: runtime, release_date: release_date })
+  }).then(res => res.json());
+};

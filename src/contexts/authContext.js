@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import { login, signup } from "../api/movie-api";
+import { login, signup, FantasyMovie } from "../api/movie-api";
 
 export const AuthContext = createContext(null);
 
@@ -30,6 +30,12 @@ const AuthContextProvider = (props) => {
     return (result.code == 201) ? true : false;
   };
 
+  const movieregister = async (title, overview, genres, runtime, release_date) => {
+    const result = await FantasyMovie(title, overview, genres, runtime, release_date);
+    console.log(result.code);
+    return (result.code == 201) ? true : false;
+  };
+
   const signout = () => {
     setTimeout(() => setIsAuthenticated(false), 100);
   }
@@ -40,6 +46,7 @@ const AuthContextProvider = (props) => {
         isAuthenticated,
         authenticate,
         register,
+        movieregister,
         signout,
         email
       }}
