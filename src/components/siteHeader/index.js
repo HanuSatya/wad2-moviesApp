@@ -61,15 +61,6 @@ const SiteHeader = () => {
       }
     }
   }
-  // const fantasyprint = () => {
-  //   if (authcontext != null)
-  //   {
-  //     if (!authcontext.isAuthenticated)
-  //     {
-  //       return <Button key={"FantasyMovie"} color="inherit" onClick={() => FantasyMovie()}>{"FantasyMovie"}</Button>
-  //     }
-  //   }
-  // }
 
   const logout= (e) =>{
     localStorage.clear(); 
@@ -79,9 +70,6 @@ const SiteHeader = () => {
   }
   const login= (e) =>{
     history.push('/login');
-  }
-  const FantasyMovie= (e) =>{
-    history.push('/FansatyMovie');
   }
 
   const handleMenuSelect = (pageURL) => {
@@ -153,7 +141,6 @@ const SiteHeader = () => {
               ))}
               {loginprint()}
               {logoutprint()}
-              {/* {fantasyprint()} */}
             </>
           )}
         </Toolbar>
