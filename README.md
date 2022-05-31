@@ -9,7 +9,9 @@ __Name:__ Hanuma Satya Sunnam
 # Upcoming Movie Page: The Upcoming Movie page is upgraded with the review section and actors endpoint of TMDB
 # Recommended Movie : recommended movie page is added to the Discover Movies pages which shows the contents from the recommended endpoint of TMDB
 # Actors in Moivie: Actors who acted in the movie are listed below the Movie page from the actors endpoint of TMDB
-# Favourites: In this favourites page we can find the Writing Review Icon and Deleting option as well as In the movie section we can see the Actors who played the chracters and recommended movies of the same type
+# Favourites: In this favourites page we can find the Writing Review Icon and Deleting option as well as In the movie section we can see the Actors who played the      characters and recommended movies of the same type
+# FantasyMovie : In this fantasy movie page we add the movie of our intrest in to the Database.
+# Tv : Tv page is added to the site header which retreives the contents from the top rated endpoint of TMDB 
 
 
 
@@ -47,6 +49,21 @@ __URL:__ /movies/favourites
 ![image](![Favourites](https://user-images.githubusercontent.com/91950953/165968929-f651b409-3629-4f58-9405-84a511a2d7cc.PNG))
 
 
+__The Fantasy Movie Page__
+> In this fantasy movie page we add the movie of our intrest in to the Database
+
+__URL:__ http://localhost:3000/fantasyMoviePage
+
+![image](![FanstasyMovie](https://user-images.githubusercontent.com/91950953/171124233-dbfe9f2e-1ea2-4d66-947b-368315f5e8ee.PNG))
+
+
+__The TV Movies feature.__
+> Lists Tv/series from the TV endpoint of TMDB
+
+__URL:__ /movies/Tv
+
+![image](![TV](https://user-images.githubusercontent.com/91950953/171125596-098399b3-0d2e-4395-89d5-c9fb1f2f3bcd.PNG))
+
 
 __Recommended Movies__
 The details of the Recommed Movies can be found at the bottom fo the Movie More-Info page.
@@ -57,7 +74,7 @@ The Details of the Actor can be found in the Movie More-Info page.
 ![image](![Actors](https://user-images.githubusercontent.com/91950953/165969421-c469e074-887d-4d51-b69e-a6516728e4ff.PNG))
 
 __Pagination__
-Pagination is added to the Home Page.
+Pagination is added to the Home Page, UpComing Page, Top Rated Movie page.
 ![image](![Pagination](https://user-images.githubusercontent.com/91950953/165969710-5517f9db-297f-4fa9-a088-a2a4275975d3.PNG))
 
 __More Info Page__
