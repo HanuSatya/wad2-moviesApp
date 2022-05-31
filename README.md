@@ -5,13 +5,14 @@ __Name:__ Hanuma Satya Sunnam
 ### Overrview.
 
 # TopRated Movie : Top rated movie page is added to the site header which retreives the contents from the top rated endpoint of TMDB
-# Pagination : Added data listing page to the Home(Discover) page
+# Pagination : Added data listing page to the Home(Discover) page, UpComing page, Top Rated Movie Page.
 # Upcoming Movie Page: The Upcoming Movie page is upgraded with the review section and actors endpoint of TMDB
 # Recommended Movie : recommended movie page is added to the Discover Movies pages which shows the contents from the recommended endpoint of TMDB
 # Actors in Moivie: Actors who acted in the movie are listed below the Movie page from the actors endpoint of TMDB
 # Favourites: In this favourites page we can find the Writing Review Icon and Deleting option as well as In the movie section we can see the Actors who played the      characters and recommended movies of the same type
 # FantasyMovie : In this fantasy movie page we add the movie of our intrest in to the Database.
 # Tv : Tv page is added to the site header which retreives the contents from the top rated endpoint of TMDB 
+# Login & SignUp page : Login & Signup page is added to the site header which is used to register the account in to the Database via API's
 
 
 
@@ -63,6 +64,15 @@ __The TV Movies feature.__
 __URL:__ /movies/Tv
 
 ![image](![TV](https://user-images.githubusercontent.com/91950953/171125596-098399b3-0d2e-4395-89d5-c9fb1f2f3bcd.PNG))
+
+__The Login & SignUp feature__
+> used to register the account in to the Database via API's
+
+__URL:__ http://localhost:3000/login
+![image](![Login](https://user-images.githubusercontent.com/91950953/171141965-6c337ff4-5def-497f-a07b-8c4949d98282.PNG))
+
+__URL:__ http://localhost:3000/signup
+![image](![Signup](https://user-images.githubusercontent.com/91950953/171142064-1bdd434f-52e9-4742-be7b-97f33b7baeee.PNG))
 
 
 __Recommended Movies__
